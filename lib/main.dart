@@ -1,9 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(XylophoneApp());
-}
+void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
   const XylophoneApp({super.key});
@@ -18,7 +16,7 @@ class XylophoneApp extends StatelessWidget {
     print('it got Pressed');
   }
 
-  Expanded buildKey(Color colors, int soundNumber) {
+  Expanded buildKey({required Color colors, required int soundNumber}) {
     return Expanded(
       child: TextButton(
         onPressed: () async {
@@ -37,13 +35,13 @@ class XylophoneApp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              buildKey(Colors.red, 1),
-              buildKey(Colors.orange, 2),
-              buildKey(Colors.yellow, 3),
-              buildKey(Colors.green, 4),
-              buildKey(Colors.teal, 5),
-              buildKey(Colors.blue, 6),
-              buildKey(Colors.purple, 7),
+              buildKey(colors: Colors.red, soundNumber: 1),
+              buildKey(colors: Colors.orange, soundNumber: 2),
+              buildKey(colors: Colors.yellow, soundNumber: 3),
+              buildKey(colors: Colors.green, soundNumber: 4),
+              buildKey(colors: Colors.teal, soundNumber: 5),
+              buildKey(colors: Colors.blue, soundNumber: 6),
+              buildKey(colors: Colors.purple, soundNumber: 7),
             ],
           ),
         ),
